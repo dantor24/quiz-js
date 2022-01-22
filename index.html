@@ -9,14 +9,14 @@
 </head>
 <body onload="getQuestion(), getBtnAnswer()">
     <h1>quiz<span>?</span></h1>
-    <span id="score"> score: <span>0</span> </span>
+    <span id="score"> score: <span>0</span>/5 </span>
     <div id="frame"></div>
     
     <div class="btn-container">
-        <button class="answer" onclick="btnA()"></button>
-        <button class="answer" onclick="btnB()"></button>
-        <button class="answer" onclick="btnC()"></button>
-        <button class="answer" onclick="btnD()"></button>
+        <button class="answer" onclick="btn(1)"></button>
+        <button class="answer" onclick="btn(2)"></button>
+        <button class="answer" onclick="btn(3)"></button>
+        <button class="answer" onclick="btn(4)"></button>
     </div>
     <script src="script.js"></script>
 </body>
