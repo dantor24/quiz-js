@@ -42,7 +42,7 @@ const incrementScore = () => {
 function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
+// create a new array who contain good and bad answer randomly
 const randomQuestion = (good = [],bad = []) =>{
     let randomArray  = new Array();
     let collectArray = new Array();
@@ -73,12 +73,49 @@ const randomQuestion = (good = [],bad = []) =>{
 }
 const btnA = () => {
     let btnValue = document.querySelector(".answer:nth-child(1)")
-    console.log(GoodAnswer[countQuestion-1])
     if(btnValue.textContent === GoodAnswer[countQuestion-1]){
         incrementScore();
         getQuestion();
         getBtnAnswer();
     }else{
+        console.log(btnValue.textContent)
+        getQuestion();
+        getBtnAnswer();
+    }
+}
+const btnB = () => {
+    let btnValue = document.querySelector(".answer:nth-child(1)")
+    if(btnValue.textContent === GoodAnswer[countQuestion-1]){
+        incrementScore();
+        getQuestion();
+        getBtnAnswer();
+    }else{
+        console.log(btnValue.textContent)
+        getQuestion();
+        getBtnAnswer();
+    }
+}
+const btnC = () => {
+    let btnValue = document.querySelector(".answer:nth-child(1)")
+    if(btnValue.textContent === GoodAnswer[countQuestion-1]){
+        incrementScore();
+        getQuestion();
+        getBtnAnswer();
+    }else{
+        console.log(btnValue.textContent)
+        getQuestion();
+        getBtnAnswer();
+    }
+}
+const btnD = () => {
+    let btnValue = document.querySelector(".answer:nth-child(1)")
+    if(btnValue.textContent === GoodAnswer[countQuestion-1]){
+        incrementScore();
+        getQuestion();
+        getBtnAnswer();
+        console.log(GoodAnswer[countQuestion-1])
+    }else{
+        console.log(btnValue.textContent)
         getQuestion();
         getBtnAnswer();
     }
@@ -88,7 +125,7 @@ const getBtnAnswer = () =>{
     
     let btnValue = document.querySelectorAll(".answer")
     Array.from(btnValue).forEach(function(btn){
-        console.log(randVal[post][item]);
+        // console.log(randVal[post][item]);
         btn.textContent = randVal[post][item]
         item++;  
     });
@@ -96,8 +133,3 @@ const getBtnAnswer = () =>{
     item = 0;
 
 }
-getQuestion();
-getBtnAnswer();
-
-// btnA();
-// console.log(randomQuestion(GoodAnswer,badAnswer))
