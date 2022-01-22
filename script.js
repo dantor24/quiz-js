@@ -1,5 +1,6 @@
 var countQuestion = 0,
-    score = 0;
+    score = 0,
+    post = 0, item =0;
 let question = [
     "Quel est la capital d'Haiti?",
     "Ou se trouve la citadelle laferriere?",
@@ -49,7 +50,7 @@ const randomQuestion = (good = [],bad = []) =>{
     
     for(let i =0; i < bad.length; i++){
         randValue  = randomInteger(0,3);
-        console.log(randValue)
+        // console.log(randValue)
         for(let j =0; j <= bad[i].length; j++){
         
             if(randValue === j){
@@ -70,8 +71,33 @@ const randomQuestion = (good = [],bad = []) =>{
     }
     return collectArray;
 }
+const btnA = () => {
+    let btnValue = document.querySelector(".answer:nth-child(1)")
+    console.log(GoodAnswer[countQuestion-1])
+    if(btnValue.textContent === GoodAnswer[countQuestion-1]){
+        incrementScore();
+        getQuestion();
+        getBtnAnswer();
+    }else{
+        getQuestion();
+        getBtnAnswer();
+    }
+}
+const getBtnAnswer = () =>{
+    let randVal = randomQuestion(GoodAnswer,badAnswer);
+    
+    let btnValue = document.querySelectorAll(".answer")
+    Array.from(btnValue).forEach(function(btn){
+        console.log(randVal[post][item]);
+        btn.textContent = randVal[post][item]
+        item++;  
+    });
+    post++;
+    item = 0;
 
+}
 getQuestion();
-getQuestion();
-getQuestion();
-console.log(randomQuestion(GoodAnswer,badAnswer))
+getBtnAnswer();
+
+// btnA();
+// console.log(randomQuestion(GoodAnswer,badAnswer))
