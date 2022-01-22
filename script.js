@@ -3,11 +3,13 @@ var countQuestion = 0,
 let question = [
     "Quel est la capital d'Haiti?",
     "Ou se trouve la citadelle laferriere?",
+    "Qui est le précurseur de l'indépendance?",
 ];
-let GoodAnswer = ["port-au-prince", "milot"];
+let GoodAnswer = ["port-au-prince", "milot","Toussaint Louverture"];
 let badAnswer = [
     ["Cap-haitien", "Hinche", "Fort-liberte"],
     ["Gonaives", "Cap-haitien", "Port-de-paix"],
+    ["Dessalines","Capois","Henry Christophe"]
 ];
 const getQuestion = () => {
 
@@ -34,5 +36,42 @@ const incrementScore = () => {
     let boardScore = document.querySelector("#score span");
     boardScore.innerText = ++score;
 };
+
+// return a random number 
+function randomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const randomQuestion = (good = [],bad = []) =>{
+    let randomArray  = new Array();
+    let collectArray = new Array();
+    let randValue = 0;
+    
+    for(let i =0; i < bad.length; i++){
+        randValue  = randomInteger(0,3);
+        console.log(randValue)
+        for(let j =0; j <= bad[i].length; j++){
+        
+            if(randValue === j){
+                randomArray.push(good[i]);
+                // randomArray.push(bad[i][j])
+                continue;
+            }else{
+                
+                if(bad[i][j] === undefined){
+                    randomArray.push("aucune de ces reponses");
+                }else{
+                    randomArray.push(bad[i][j]);
+                }
+            }
+        }
+        collectArray.push(randomArray);
+        randomArray = new Array();
+    }
+    return collectArray;
+}
+
 getQuestion();
-// getQuestion();
+getQuestion();
+getQuestion();
+console.log(randomQuestion(GoodAnswer,badAnswer))
