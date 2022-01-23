@@ -8,14 +8,16 @@ let question = [
   "Qui est le précurseur de l'indépendance d'Haiti?",
   "La commune de limonade se trouve dans quel departement?",
   "En quelle année christophe colomb a découvert l'amérique?",
+  "Qui a dit :\"Les noirs, dont les pères sont en Afrique, n'auront-ils rien?\" ",
 ];
-let GoodAnswer = ["port-au-prince", "milot", "Toussaint Louverture","nord","1492"];
+let GoodAnswer = ["port-au-prince", "milot", "Toussaint Louverture","nord","1492","Dessalines"];
 let badAnswer = [
   ["Cap-haitien", "Hinche", "Fort-liberte"],
   ["Gonaives", "Cap-haitien", "Port-de-paix"],
   ["Dessalines", "Capois", "Henry Christophe"],
   ["sud", "nord-est", "Grande-anse"],
-  ["1702","1803","1490"]
+  ["1702","1803","1490"],
+  ["Toussaint Louverture", "Capois", "Henry Christophe"],
 ];
 const getQuestion = () => {
   let frameQuestion = document.getElementById("frame");
