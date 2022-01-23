@@ -38,9 +38,14 @@ const getQuestion = () => {
 };
 
 const incrementScore = () => {
-  let boardScore = document.querySelector("#score span");
+  let boardScore = document.querySelector("#point");
   boardScore.innerText = ++score;
 };
+
+const total = () => {
+  let value = document.querySelector("#total");
+  value.innerText = question.length;
+}
 
 // return a random number
 function randomInteger(min, max) {
